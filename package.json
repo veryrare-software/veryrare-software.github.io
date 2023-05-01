@@ -1,0 +1,21 @@
+{
+  "name": "Prtf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "webpack-cli": "^3.2.0"
+  },
+  "dependencies": {
+    "gl-matrix": "^2.8.1",
+    "normalize-css": "^2.3.1",
+    "three": "^0.96.0"
+  }
+}

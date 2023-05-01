@@ -27,9 +27,6 @@ h1, h2, h3, h4, h5, h6, p, a, b, small, strong, span, input, button, i, div, sec
     margin: 0;
     padding: 0;
 }
-h2{
-    text-align: right;
-}
 
 a{
     font-family: inherit;
@@ -122,6 +119,14 @@ canvas{
     padding: 0.5rem 0;
 }
 
+h2{
+    text-align: right;
+}
+
+.text-right{
+    text-align: right;
+}
+
 .last{
     padding-top: 0;
     text-align: right;
@@ -152,11 +157,16 @@ canvas{
 img{
     display: inline-block;
     max-width: 100%;
+    border:  none;
 }
 
 .flex{
     display: flex;
 }
+.flex div{
+    border: none;
+}
+
 /*
 @keyframes caretAnim {
     0%   { opacity: 1 }

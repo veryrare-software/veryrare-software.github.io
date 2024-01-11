@@ -1,3 +1,6 @@
+@import url('utils.css');
+@import url('glitch.css');
+
 html{
     background-color: black;
 }
@@ -28,22 +31,41 @@ h1, h2, h3, h4, h5, h6, p, a, b, small, strong, span, input, button, i, div, sec
     padding: 0;
 }
 
-a{
+#menu span,
+#content span {
+    background-color: #000000;
+}
+
+.span-block
+{
+    display: inline-block;
+    padding: 0.05rem 0.1rem;
+}
+a, .link-style{
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
-    color: #0000ff;
+    color: #1010ff;
     display: inline-block;
+    background-color: #000000;
 }
+a:hover, .link-style:hover{
+    text-shadow: 3px 3px #ff0033, -3px -3px #00ff6699;
+}
+
+.link-style::before,
 a::before{
     content: '['
 }
+.link-style::after,
 a::after{
     content: ']'
 }
+.link-style:hover,
 a:hover{
     color: #000000;
-    background: #0000ff;
+    background: #1010ff;
+    cursor: pointer;
 }
 h1, h2, h3, h4, h5 { 
     color: red;
@@ -54,11 +76,18 @@ h1 a, h2 a, h3 a, h4 a, h5 a {
     font-weight: inherit;
     font-size: inherit;
 }
+h2{
+    margin: 0;
+    text-align: center;
+    background-color: black;
+    padding: 0.5rem;
+}
 
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
     color: #000000;
     background: #ff0000;
 }
+
 canvas{
     width: 100%;
     height: 100%;
@@ -75,6 +104,7 @@ canvas{
     overflow: scroll;
     scrollbar-width: none;
 }
+
 #content::-webkit-scrollbar { 
     display: none; 
 }
@@ -84,10 +114,19 @@ canvas{
     max-width: 90%;
     margin: 0 auto;
     padding: 0 1rem;
-    background: black;
+    /* background: black; */
     min-height: 100vh;
-    transition: all ease-in-out 0.15s;
+    transition: all ease-in-out 0.3s;
+    transition-delay: 0.3s;
 }
+
+.container.scrolling{
+    background: rgba(0,0,0,0.9);
+}
+
+
+
+
 .section{
     padding-top: 50vh;
     min-height: 100vh;
@@ -95,37 +134,33 @@ canvas{
 .section > div{
     width: 100%;
 }
-.section h2, .section h3{
-    margin-top: 0.5rem;
-}
-.first{
+
+.section{
     height: 100vh;
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 0;
 }
 
-.section:not(.first):not(.last) { 
-    display: flex;
-    align-items: flex-end;
+.section:first-child{
+    margin-top: 100vh;
 }
 
-.section:not(.first):not(.last) p { 
+.section p { 
     font-family: monospace;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 0.666rem;
     line-height: 1.3;
-    padding: 0.5rem 0;
+    padding: 0;
+    text-align: center;
+}
+.section span { 
+    font-weight: 600;
+    font-size: 0.666rem;
+    line-height: 1.3;
 }
 
-h2{
-    text-align: right;
-}
-
-.text-right{
-    text-align: right;
-}
 
 .last{
     padding-top: 0;
@@ -135,7 +170,7 @@ h2{
     justify-content: space-between;
     flex-direction: column;
 }
-.last  > div {
+.last > div {
     width: 100%;
     text-align: left;
 }
@@ -167,21 +202,55 @@ img{
     border: none;
 }
 
-/*
-@keyframes caretAnim {
-    0%   { opacity: 1 }
-    0.1%   { opacity: 0 }
-    50% { opacity: 0 }
-    50.1% { opacity: 1 }
+.menu
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index:999;
 }
 
-p:hover::after{
-    content: '\2588';
-    display: inline;
-    font-size: 85%;
-    animation-name: caretAnim;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+.menu,
+.menu .menu-flex 
+.menu p
+{
+    pointer-events: none;
 }
-*/
-@import url('glitch.css');
+
+.menu .menu-flex
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.menu p
+{
+    text-align: center;
+    width:  100%;
+    padding: 0.2rem;
+}
+
+.menu p,
+.menu p span
+{
+    font-family: VT323;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin-bottom: 0;
+}
+
+.menu p span
+{
+    pointer-events: auto; 
+}
+.menu p.selected
+/* .menu p.selected:not(:first-child) */
+{
+    margin-bottom: calc(100vh - 8rem);
+}

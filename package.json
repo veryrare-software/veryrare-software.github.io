@@ -1,21 +1,29 @@
 {
-  "name": "Prtf",
+  "name": "very_rare_site",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack serve"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "css-loader": "^1.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.7.6",
     "style-loader": "^0.23.0",
-    "webpack-cli": "^3.2.0"
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
     "gl-matrix": "^2.8.1",
     "normalize-css": "^2.3.1",
-    "three": "^0.96.0"
+    "three": "^0.160.0"
   }
 }

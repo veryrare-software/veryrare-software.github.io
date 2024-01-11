@@ -1,41 +1,82 @@
-import * as THREE from 'three';
+import { BufferGeometry, BufferAttribute} from 'three';
 
-let cubeLines = new THREE.Geometry();
-cubeLines.vertices.push(new THREE.Vector3( -1, -1, -1));
-cubeLines.vertices.push(new THREE.Vector3( -1, -1, 1));
-cubeLines.vertices.push(new THREE.Vector3( -1, -1, -1));
-cubeLines.vertices.push(new THREE.Vector3( -1, 1,  -1));
-cubeLines.vertices.push(new THREE.Vector3( -1, -1, -1));
-cubeLines.vertices.push(new THREE.Vector3( 1, -1, -1));
-cubeLines.vertices.push(new THREE.Vector3( 1, 1, 1));
-cubeLines.vertices.push(new THREE.Vector3( 1, 1, -1));
-cubeLines.vertices.push(new THREE.Vector3( 1, 1, 1));
-cubeLines.vertices.push(new THREE.Vector3( 1, -1,  1));
-cubeLines.vertices.push(new THREE.Vector3( 1, 1, 1));
-cubeLines.vertices.push(new THREE.Vector3( -1, 1, 1));
-cubeLines.vertices.push(new THREE.Vector3( 1, -1, -1));
-cubeLines.vertices.push(new THREE.Vector3( 1, 1, -1));
-cubeLines.vertices.push(new THREE.Vector3( -1, -1, 1));
-cubeLines.vertices.push(new THREE.Vector3( -1, 1, 1));
-cubeLines.vertices.push(new THREE.Vector3( -1, -1, 1));
-cubeLines.vertices.push(new THREE.Vector3( 1, -1, 1));
-cubeLines.vertices.push(new THREE.Vector3( -1, 1, -1));
-cubeLines.vertices.push(new THREE.Vector3( 1, 1, -1));
-cubeLines.vertices.push(new THREE.Vector3( -1, 1, -1));
-cubeLines.vertices.push(new THREE.Vector3( -1, 1, 1));
-cubeLines.vertices.push(new THREE.Vector3( 1, -1, -1));
-cubeLines.vertices.push(new THREE.Vector3( 1, -1, 1));
+// default geometries to copy vertices from
 
-let circleLines = new THREE.Geometry();
+let cubeVertices = [
+    -1.0, -1.0, -1.0,
+    -1.0, -1.0, 1.0,
+    -1.0, -1.0, -1.0,
+    -1.0, 1.0,  -1.0,
+    -1.0, -1.0, -1.0,
+    1.0, -1.0, -1.0,
+    1.0, 1.0, 1.0,
+    1.0, 1.0, -1.0,
+    1.0, 1.0, 1.0,
+    1.0, -1.0,  1.0,
+    1.0, 1.0, 1.0,
+    -1.0, 1.0, 1.0,
+    1.0, -1.0, -1.0,
+    1.0, 1.0, -1.0,
+    -1.0, -1.0, 1.0,
+    -1.0, 1.0, 1.0,
+    -1.0, -1.0, 1.0,
+    1.0, -1.0, 1.0,
+    -1.0, 1.0, -1.0,
+    1.0, 1.0, -1.0,
+    -1.0, 1.0, -1.0,
+    -1.0, 1.0, 1.0,
+    1.0, -1.0, -1.0,
+    1.0, -1.0, 1.0
+]
+let cubeLines = new BufferGeometry();
+cubeLines.setAttribute( 'position', new BufferAttribute( new Float32Array( cubeVertices ), 3 ) );
 
+
+// default geometry for circle nodes
 const N = 32;
-for ( let i = 0; i < N;i++ ){
-    circleLines.vertices.push(new THREE.Vector3(0,0,0));
-    circleLines.vertices.push(new THREE.Vector3(1 * Math.sin((i - .5) * Math.PI * 2 / N), 1 * Math.cos((i - .5) * Math.PI * 2 / N), 0));
-    circleLines.vertices.push(new THREE.Vector3(1 * Math.sin((i - .5) * Math.PI * 2 / N), 1 * Math.cos((i - .5) * Math.PI * 2 / N), 0));
-    circleLines.vertices.push(new THREE.Vector3(2 * Math.sin((i + 1.5) * Math.PI * 2 / N), 2 * Math.cos((i + 1.5) * Math.PI * 2 / N), 0));
-    circleLines.vertices.push(new THREE.Vector3(2 * Math.sin((i + 1.5) * Math.PI * 2 / N), 2 * Math.cos((i + 1.5) * Math.PI * 2 / N), 0));
-    circleLines.vertices.push(new THREE.Vector3(2 * Math.sin((i + 2) * Math.PI * 2 / N), 2 * Math.cos((i + 2) * Math.PI * 2 / N), 0));
-}
+let circleVertices = []
 
-export { cubeLines, circleLines};
+for ( let i = 0; i < N;i++ ) {
+    circleVertices.push(0.0);
+    circleVertices.push(0.0);
+    circleVertices.push(0.0);
+
+    circleVertices.push(1.0 * Math.sin((i - 0.1) * Math.PI * 2.0 / N) ); 
+    circleVertices.push(1.0 * Math.cos((i - 0.1) * Math.PI * 2.0 / N) );
+    circleVertices.push(0);
+    
+    circleVertices.push(1.0 * Math.sin((i - 0.1) * Math.PI * 2.0 / N)); 
+    circleVertices.push(1.0 * Math.cos((i - 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(0);
+    
+    circleVertices.push(4.0 * Math.sin((i + 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(4.0 * Math.cos((i + 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(0);
+
+    circleVertices.push(4.0 * Math.sin((i + 0.1) * Math.PI * 2.0 / N)); 
+    circleVertices.push(4.0 * Math.cos((i + 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(0);
+
+    circleVertices.push(6.0 * Math.sin((i - 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(6.0 * Math.cos((i - 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(0.0);
+
+    circleVertices.push(6.0 * Math.sin((i - 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(6.0 * Math.cos((i - 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(0.0);
+
+    circleVertices.push(10.0 * Math.sin((i + 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(10.0 * Math.cos((i + 0.1) * Math.PI * 2.0 / N));
+    circleVertices.push(0.0);
+}
+let circleLines = new BufferGeometry();
+circleLines.setAttribute( 'position', new BufferAttribute( new Float32Array( circleVertices ), 3 ) );
+
+let horizontalVertices = [ 
+    -15.0 , 0.0 , 0.0,
+    15.0 , 0.0 , 0.0
+];
+let horizontalLine = new BufferGeometry();
+horizontalLine.setAttribute( 'position', new BufferAttribute( new Float32Array( horizontalVertices ), 3 ) );
+
+export { cubeLines, circleLines, horizontalLine };

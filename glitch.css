@@ -1,8 +1,12 @@
 
-.glitch {
+.glitch{
   position: relative;
   min-width: 600px;
   margin: 0 auto;
+}
+
+.glitch-hover {
+  position: relative;
 }
 
 @keyframes noise-anim {
@@ -70,7 +74,7 @@
     clip: rect(74px, 9999px, 83px, 0);
   }
 }
-.glitch:after {
+.glitch::after, .glitch-hover:hover::after {
   content: attr(data-text);
   position: absolute;
   left: 2px;
@@ -81,6 +85,7 @@
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim .65s infinite linear alternate-reverse;
+  background: none;
 }
 
 @keyframes noise-anim-2 {
@@ -148,7 +153,8 @@
     clip: rect(22px, 9999px, 20px, 0);
   }
 }
-.glitch:before {
+.glitch::before, .glitch-hover:hover::before {
+  background: none;
   content: attr(data-text);
   position: absolute;
   left: -2px;

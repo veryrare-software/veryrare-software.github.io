@@ -7,232 +7,107 @@
     
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323&subset=latin-ext">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./main.css">
 <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
 <body style="opacity:0" onload="document.body.style.opacity='1'">
     
     <div class="top-text">
-        <h1><span class="glitch-trigger" data-text="This is a Heading">VeryRare</span></h1>
-        <p><span class="glitch-trigger" data-text="This is a paragraph.">Software</span></p>
+        <h1><span class="glitch-trigger" data-text="VeryRare">VeryRare</span></h1>
+        <p><span class="glitch-trigger" data-text="Software">Software</span></p>
     </div>
-    <p class="bottom-text"><span class="glitch-trigger" data-text="Press space.">Bottom Text.</span></p>
+    <p class="bottom-text"><span id="bottom-button" class="glitch-trigger scrollable" href="#menu" data-text="Contact.">Contact.</span></p>
 
-    <div class="content" id="content" style="display: none">
+    <section class="menu" id="menu">
+        <div class="menu-flex">
+            <p class="menu-button" data-camoffset="-1" href="#veryrare-section"><span class="link-style glitch-hover" data-text="VeryRare">VeryRare</span></p> 
+            <p class="menu-button" data-camoffset="-2" href="#nafilm"><span class="link-style glitch-hover" data-text="NaFilMVR">NaFilmVR</span></p>
+            <p class="menu-button" data-camoffset="-2" href="#kunsthalle"><span class="link-style glitch-hover" data-text="KunsthalleVR">KunsthalleVR</span></p>
+            <p class="menu-button" data-camoffset="-2" href="#industria"><span class="link-style glitch-hover" data-text="IndustriaVR">IndustriaVR</span></p> 
+        </div>
+    </section>
+    
+    <div class="content" id="content" >
         <div class="container">
 
-            <!--  -->
-            <section class="section last">
-                <p>Now we here.</p>
-                <div class="text-left">
-                    <p> 
-                        You can see more of my work at  
-                    </p>
-                    <p style="text-align: right"> 
-                        <a target="_blank" href="https://gitlab.com/veryrare.software">gitlab.com/veryrare.software</a>
-                    </p>
-                    <p style="text-align: right"> 
-                        <a target="_blank" href="https://veryraresoftware.itch.io">veryraresoftware.itch.io</a>
-                    </p>
-                    <p style="text-align: right"> 
-                        <a target="_blank" href="https://www.veryrare.software">veryrare.software</a>
+            <section class="section" id="veryrare-section">
+                <div>
+                    <p>
+                        <span class="span-block">We are a VR and indie game studio based in the heart of Europe.</span>
+                        <span class="span-block">We create playful art. We experiment with technology.</span>
                     </p>
                     <p>
-                        Feel free to contact me via email
+                        <span class="span-block">We follow the fun and focus on immersion.</span>
                     </p>
-                    <p style="text-align: right"> 
-                        <a href="mailto:adam.fiser.dev@gmail.com">adam.fiser.dev@gmail.com</a>
-                    </p>
+                    <!-- <p>
+                        <span>VR</span>
+                        <span>Animation</span>
+                        <span>3D</span>
+                        <span>Rokoko MoCap</span>
+                        <span>Indie Games</span>
+                    </p> -->
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="nafilm">
                 <div>
-                    <h3>Industria VR</h3>
-                    <div class="flex">
-                        <div style="width: 100%"><img style="width: 100%" src="./img/katedrala-industria.jpg"></div>
-                    </div>
-                    <div class="flex">
-                        <div style="width: 50%"><img src="./img/Screenshot 2023-05-01 222317.png"></div>
-                        <div style="width: 50%"><img src="./img/Screenshot 2023-05-01 222436.png"></div>
-                    </div>
+                    <h2>NaFilM VR</h2>
                     <p>
-                        VR rogue-like shooter set in the the alternative universe, where people were transformed into robots and slowly losing their humanity. Game is heavily inspired by Metropolis.
+                        <span class="span-block">Interactive VR movie for National film museum created in cooperation with BCAA.</span>
+                        <span class="span-block">Developed in Unity and combines 360 movies and interactable 3D objects.</span>
+                        <a href="https://nafilm.org/novinky/">press</a>
                     </p>
-                    <p style="text-align: right">
-                        <a target="_blank" href="https://www.veryrare.software/projects/industria-vr">veryrare.software/projects/industria-vr</a>
-                    </p>
+                    <div class="flex" style="align-items: center; justify-content: center;">
+                        <div style="max-width: 50%;"><img src="img/maly-princ.png"></div>
+                        <div style="max-width: 50%;"><img src="img/maly-princ-3.png"></div>
+                    </div>
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="kunsthalle">
                 <div>
-                    <h3>Vivarium</h3>
-                    <div class="flex">
-                        <div style="width: 100%"><img style="width: 100%" src="./img/Screenshot 2023-05-01 214158.png"></div>
+                    <h2>Kunsthalle VR</h2>
+                    <p>
+                        <span class="span-block">Mermaid Effect is 3D VR movie directed by Markéta Magidová for Kunsthalle.</span>
+                        <span class="span-block">For Meta Quest 2, 3D is rendered in real time on the device.</span>
+                        <span class="span-block">Developed in Unity, assets were created in Blender.</span>
+                        <a href="https://www.kunsthallepraha.org/udalosti/marketa-magidova-moje-sladka-nejedla-planeta">press</a>
+                    </p>
+                    <div class="flex" style="align-items: center; justify-content: center;">
+                        <div style="max-width: 50%;"><img src="img/kunsthalle-1.png"></div>
+                        <div style="max-width: 50%;"><img src="img/kunsthalle-2.png"></div>
                     </div>
+                </div>
+            </section>
 
-                    <div class="flex">
-                        <div style="width: 100%">
-                            <video style="width: 100%" controls>
-                                <source src="./img/Vivarium.mp4" type="video/mp4">
-                            </video>
+            <section class="section" id="industria">
+                <div>
+                    <h2>Industria VR</h2>
+                    <p>
+                        <span class="span-block">Rogue-like VR shooter game (pre-production demo).</span>
+                    </p>
+                    <p>
+                        <span class="span-block">As fast as VR can allow - intense moments in every arena.</span>
+                        <span class="span-block">Stunning hand-crafted visuals adding to dark and mechanical atmosphere.</span>
+                        <a href="https://veryraresoftware.itch.io">more</a>
+                    </p>
+                        <div class="flex" style="align-items: center; justify-content: center; margin-top: 1rem; flex-wrap: wrap;">
+                            <!-- <div style="max-width: 33.3%;"><img src="img\bot1_update_01.jpg"></div> -->
+                            <div style="max-width: 50%;"><img src="img\com.DefaultCompany.SecretVRProject-20210414-001725.jpg"></div>
+                            <!-- <div style="max-width: 50%;"><img src="img\rn_image_picker_lib_temp_c7095df1-8c7a-494e-9840-8bf692cc8de1.jpg"></div> -->
+                            <div style="width: 50%;">
+                                <div class="video_wrapper">
+                                    <iframe src="https://www.youtube.com/embed/UxrxB5hDH-E"> </iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <p>
-                        Game prototype of causal management game, where player balances the ecosystem, in which animals can reproduce and inherit genes, carnivores eat smaller animals and herbivores eat plants. 
-                    </p>
-                    <p style="text-align: right">
-                        <a target="_blank" href="https://veryraresoftware.itch.io/vivarium">veryraresoftware.itch.io/vivarium</a>
-                    </p>
-                </div>
-            </section>
-
-            
-            <section class="section">
-                <div>
-                    <h3>Budeš Věci</h3>
-                    <div class="flex">
-                        <div style="width: 100%"><img style="width: 100%" src="./img/LnqUR5.png"></div>
-                    </div>
-                    <div class="flex">
-                        <div style="width: 50%"><img style="width: 100%" src="./img/tyj0oh.png"></div>
-                        <div style="width: 50%"><img style="width: 100%" src="./img/GsYpi9.png"></div>
-                    </div>
-                    <p>
-                        FPS anti-game about going in circles in Observatory and transforming into different things to see the world from different perspectives, 
-                        You can wander around and look at the same things with eyes of various living and non-living objects and interact with the environment differently.                    ¨
-                    </p>
-                    <p style="text-align: right">
-                        <a target="_blank" href="https://veryraresoftware.itch.io/budes-veci">veryraresoftware.itch.io/budes-veci</a>
-                    </p>
-                </div>
-            </section>
-
-            <section class="section">
-                <div>
-                    <h3>Elektrikář z Upířovic</h3>
-                    <p>
-                        <div class="flex">
-                            <div style="width: 100%"><img style="width: 100%" src="./img/Screenshot 2023-05-01 185229.png"></div>
-                        </div>
-                        <div class="flex">
-                            <div style="width: 50%"><img src="./img/Screenshot 2023-05-01 185119.png"></div>
-                            <div style="width: 50%"><img src="./img/Screenshot 2023-05-01 184949.png"></div>
-                        </div>
-                        <p>
-                            Casual top-down action adventure about an electrician, who elctrifies haunted castle, where you have to navigate through darkness using nothing but a flashlight.. and not get scared by monsters. 
-                        </p>
-                    </p>
-                    <p style="text-align: right">
-                        <a target="_blank" href="https://veryraresoftware.itch.io/elektrik-z-uprovic">veryraresoftware.itch.io/elektrik-z-uprovic</a>
-                    </p>
-                </div>
-            </section>
-
-            <section class="section">
-                <div>
-                    <h3>Lizards from Outer Space against the Grand Cosmic Squadron</h3>
-                    <p>
-                        Lizards is a puzzle mini-game for about saving civilians from lizards from outer space created on a game jam with conspiracy theme.
-                    </p>
-                    <div class="flex">
-                        <div style="width: 100%"><img style="width: 100%" src="./img/XK0NYt.png"></div>
-                    </div>
-                    <p style="text-align: right">
-                        <a target="_blank" href="https://madhatters.itch.io/lizards-from-outer-space-and-the">madhatters.itch.io/lizards-from-outer-space-and-the</a>
-                    </p>
                 </div>
             </section>
             
-            <!-- indie -->
-            <section class="section">
+            <section class="section" id="botton">
                 <div>
-                    <!-- <section>
-                        <h3>Yet to be named Godot fiddling</h3>
-                        <p></p>
-                    </section> -->
-                  
-                    My personal projects and game jams.
-                    <h2>Indie</h2>
+                    <p class="menu-button"><span>Contact.</span></p>
                 </div>
-            </section>
-            
-            <!-- more.is.more -->
-            <section class="section">
-                <div>
-                    
-                    <div class="flex">
-                        <div style="width: 100%"><img style="width: 100%" src="./img/Screenshot 2023-05-01 173439.png"></div>
-                    </div>
-
-                    <p>
-                        In More.is.More I focus on render and animation pipeline of new XR experiences in Unity. Currently I'm also game designing of a deck-building mobile game. 
-                        We created apps such as <a target="_blank" href="https://www.visitmore.cz">visit.more</a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=cz.moreismore.aobook&hl=en&gl=US">Adam Ondra AR</a>
-                    </p>
-                    <h2>More.is.More</h2>
-                </div>
-            </section>
-            
-            <!-- ETNetera -->
-            <section class="section">
-                <div>
-                    <div class="flex">
-                        <div style="width: 50%"><img style="width: 100%" src="./img/unnamed.jpg"></div>
-                        <div style="width: 50%"><img style="width: 100%" src="./img/screen-0.jpg"></div>
-                    </div>
-                    <section>
-                        <p>Karoq VR - This was our first VR project in Etnetera, which is VR app in Unity for Cardboard and Daydream headsets
-                            for <a target="_blank" href="https://itunes.apple.com/cz/app/%C5%A1koda-karoq-vr/id1278284264?l=cs&mt=8">iOS</a> and Android, that included many visualisations of brand new Škoda vehicle.
-                    </section>
-                    <p>
-                        I started working in Etnetera in 2017 as a javascript developer. Soon after my onboarding, Etnetnera created new deparment focused on VR development in Unity, 
-                        I joined with 0 XP, but quickly adapted to new framework and mindset of creating interactive 3D applications
-                    </p>
-                    <h2>Etnetera</h2>
-                </div>
-            </section>
-
-            <!-- FIT cvut -->
-            <section class="section">
-                <div>
-                    <section>
-                        <div class="flex">
-                            <div style="width: 65%"><img style="width: 100%" src="./img/Screenshot 2023-05-01 180428.png"></div>
-                            <div style="width: 35%"><img style="width: 100%" src="./img/artopos-scrn.png"></div>
-                        </div>
-
-                        <h3>Artopos</h3>
-                        <p>My bachelor thesis was to redesign project  <a target="_blank" href="http://web.archive.org/web/20191207151449/http://www.artopos.net/">artopos.net</a>, 
-                            that focused on localizing origin of landscape paintings, into mobile UI.
-                        </p>
-                    </section>
-
-                    <section>
-                        <div class="flex">
-                            <div style="width: 50%"><img style="width: 100%" src="./img/screenshot1.png"></div>
-                            <div style="width: 50%"><img style="width: 100%" src="./img/screenshot2.png"></div>
-                        </div>  
-                        <div class="flex">
-                            <div style="width: 100%"><img style="width: 100%" src="./img/screenshot3.png"></div>
-                        </div>
-                        <h3>La petit prince</h3>
-                        <p>OpenGL project for Computer Graphics subject in C++.
-                            <a target="_blank" href="https://bitbucket.org/twisty01/pgr-game/src/master/">source</a> 
-                            <a target="_blank" href="https://cent.felk.cvut.cz/courses/PGR/archives/2016-2017/S-FIT/fiserad2/">description</a></p>
-
-                        <p>I studied Web and Multimedia at FIT CTU, where I got my bachelor degree in 2018. It was my first contact with computer graphics and shader programming, 
-                            where I realized and wanted to pursue this direction and create interactive worlds rather than banks systems and web forms.</p>
-
-                        <h2>CTU FIT</h2>
-                    </section>
-
-                </div>
-            </section>
-
-            <!--  -->
-            <section class="section first">
-                <p>Started from the bottom.</p>
             </section>
         </div>
     </div>
